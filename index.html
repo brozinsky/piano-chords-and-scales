@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano chords and scales</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="title"><span class="title-span">Piano</span> scales & chords</h1>
+    </header>
+    <div class="board">
+        <div class="white"><span class="note C">C</span></div>
+        <div class="black"><span class="note Cs">C#</span></div>
+        <div class="white"><span class="note D">D</span></div>
+        <div class="black"><span class="note Ds">D#</span></div>
+        <div class="white"><span class="note E">E</span></div>
+        <div class="white"><span class="note F">F</span></div>
+        <div class="black"><span class="note Fs">F#</span></div>
+        <div class="white"><span class="note G">G</span></div>
+        <div class="black"><span class="note Gs">G#</span></div>
+        <div class="white"><span class="note A">A</span></div>
+        <div class="black"><span class="note As">A#</span></div>
+        <div class="white"><span class="note B">B</span></div>
+    </div>
+    <form action="" class="form">
+        <section class="root-section">
+            <label>Root:</label>
+            <select name="Root" id="root">
+                <option value="C">C</option>
+                <option value="Cs">C#</option>
+                <option value="D">D</option>
+                <option value="Ds">D#</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="Fs">F#</option>
+                <option value="G">G</option>
+                <option value="Gs">G#</option>
+                <option value="A">A</option>
+                <option value="As">A#</option>
+                <option value="B">B</option>
+            </select>
+        </section>
+
+        <section class="scale-section">
+            <label class="scale-label">Scale:</label>
+            <select name="scale" id="scale">
+                <option value="221222">Major</option>
+                <option value="212212">Natural Minor</option>
+                <option value="212212">Harmonic Minor</option>
+                <option value="212222">Melodic Minor</option>
+                <optgroup label="-Pentatonic-">
+                    <option value="2322">Pentatonic Major</option>
+                    <option value="3223">Pentatonic Minor</option>
+                    <option value="32113">Pentatonic Blues</option>
+                    <option value="2323">Pentatonic Neutral</option>
+                </optgroup>
+                <optgroup label="--Exotic--">
+                    <option value="221221">Mixolydian</option>
+                    <option value="2121211">Diminished</option>
+                    <option value="222121">Lydian Dominant</option>
+                    <option value="221212">Aeolian Dominant (Hindu)</option>
+                <optgroup label="-Chinese-">
+                    <option value="4214">Chinese</option>
+                    <option value="131131">Oriental</option>
+                </optgroup>
+                <optgroup label="-Arabic-">
+                    <option value="221122">Arabic</option>
+                    <option value="213121">Maqams</option>
+                    <option value="121211">Byzantine</option>
+                    <option value="131123">Persian</option>
+                    <option value="2323">Egyptian</option>
+                </optgroup>
+                <optgroup label="-Japanese-">
+                    <option value="2141">Hirajoshi</option>
+                    <option value="14212">Insen</option>
+                    <option value="1414">Iwato</option>
+                    <option value="2322">Yo</option>
+                </optgroup>
+                <optgroup label="-European-">
+                    <option value="2121112">Algerian</option>
+                    <option value="22231">Prometheus</option>
+                    <option value="122213">Neapolitan </option>
+                    <option value="131212">Spanish Gypsy</option>
+                    <option value="213113">Hungarian Gypsy</option>
+                    <option value="213121">Romanian Minor</option>
+                </optgroup>
+                </optgroup>
+            </select>
+        </section>
+        <section class="chord-section">
+            <label class="chord-label inactive">Chord:</label>
+            <select class="inactive" name="Root" id="chord">
+                <option value="43">Major</option>
+                <option value="34">Minor</option>
+                <option value="433">Seventh</option>
+                <option value="44">Augmented</option>
+                <option value="36">Diminished</option>
+            </select>
+        </section>
+
+    </form>
+    <script src="app.js"></script>
+</body>
+
+</html>
