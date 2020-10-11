@@ -12,19 +12,19 @@
     <header class="header">
         <h1 class="title"><span class="title-span">Piano</span> scales & chords</h1>
     </header>
-    <div class="board">
-        <div class="white"><span class="note C">C</span></div>
-        <div class="black"><span class="note Cs">C#</span></div>
-        <div class="white"><span class="note D">D</span></div>
-        <div class="black"><span class="note Ds">D#</span></div>
-        <div class="white"><span class="note E">E</span></div>
-        <div class="white"><span class="note F">F</span></div>
-        <div class="black"><span class="note Fs">F#</span></div>
-        <div class="white"><span class="note G">G</span></div>
-        <div class="black"><span class="note Gs">G#</span></div>
-        <div class="white"><span class="note A">A</span></div>
-        <div class="black"><span class="note As">A#</span></div>
-        <div class="white"><span class="note B">B</span></div>
+    <div id='board' class="board">
+        <div class="white key-c"><span class="note C">C</span></div>
+        <div class="black key-cs"><span class="note Cs">C#</span></div>
+        <div class="white key-d"><span class="note D">D</span></div>
+        <div class="black key-ds"><span class="note Ds">D#</span></div>
+        <div class="white key-e"><span class="note E">E</span></div>
+        <div class="white key-f"><span class="note F">F</span></div>
+        <div class="black key-fs"><span class="note Fs">F#</span></div>
+        <div class="white key-g"><span class="note G">G</span></div>
+        <div class="black key-gs"><span class="note Gs">G#</span></div>
+        <div class="white key-a"><span class="note A">A</span></div>
+        <div class="black key-as"><span class="note As">A#</span></div>
+        <div class="white key-b"><span class="note B">B</span></div>
     </div>
     <form action="" class="form">
         <section class="root-section">
@@ -101,8 +101,12 @@
                 <option value="36">Diminished</option>
             </select>
         </section>
-
+        <button type="button" class="play-btn">Play</button>
     </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.60/Tone.js"></script>
+    <script src="    https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js
+    "></script>
     <script src="app.js"></script>
 </body>
 
