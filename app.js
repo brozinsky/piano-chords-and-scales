@@ -6,7 +6,7 @@ const scaleLabel = document.querySelector('.scale-label');
 const chordLabel = document.querySelector('.chord-label');
 
 let key = rootSelector.options[rootSelector.selectedIndex].value;
-let rootNote = document.querySelector('.' + key);
+let rootNote = document.querySelector('.' + key + '2');
 rootNote.classList.add("note--root");
 
 let activeInterval = scaleSelector.options[scaleSelector.selectedIndex].value;
@@ -83,20 +83,23 @@ rootSelector.addEventListener('change', function () {
 function createScale() {
     let retScale = [];
     for (let i = notes.indexOf(key), j = 0; j < activeInterval.length + 1; i = (i + activeInterval[j++]) % notes.length) {
-        retScale.push(notes[i]);
+        if (i < notes.indexOf(key)) {
+            retScale.push(notes[i] + '3');
+        } else {
+            retScale.push(notes[i] + '2');
+        }
+        console.log('i' + i);
+        console.log('j' + j)
+        console.log('notes i ' + notes[i])
     }
     return retScale;
 }
 
 function scalify() {
-    noteSpan.forEach(function (note) {
-        note.style.opacity = "0";
-    });
+    noteSpan.forEach(note => note.style.opacity = "0");
     for (let i = 0; i < scale.length; i++) {
         let notes = document.querySelectorAll("." + scale[i]);
-        notes.forEach(function (note) {
-            note.style.opacity = "1";
-        });
+        notes.forEach(note => note.style.opacity = "1");
     }
 }
 
@@ -113,17 +116,42 @@ const noteA2 = new Tone.Player('./sound/a2.mp3').toDestination();
 const noteAs2 = new Tone.Player('./sound/as2.mp3').toDestination();
 const noteB2 = new Tone.Player('./sound/b2.mp3').toDestination();
 
-const keyCs = document.querySelector('.key-cs');
-const keyD = document.querySelector('.key-d');
-const keyDs = document.querySelector('.key-ds');
-const keyE = document.querySelector('.key-e');
-const keyF = document.querySelector('.key-f');
-const keyFs = document.querySelector('.key-fs');
-const keyG = document.querySelector('.key-g');
-const keyGs = document.querySelector('.key-gs');
-const keyA = document.querySelector('.key-a');
-const keyAs = document.querySelector('.key-as');
-const keyB = document.querySelector('.key-b');
+const noteC3 = new Tone.Player('./sound/c3.mp3').toDestination();
+const noteE3 = new Tone.Player('./sound/e3.mp3').toDestination();
+const noteG3 = new Tone.Player('./sound/g3.mp3').toDestination();
+const noteCs3 = new Tone.Player('./sound/cs3.mp3').toDestination();
+const noteD3 = new Tone.Player('./sound/d3.mp3').toDestination();
+const noteDs3 = new Tone.Player('./sound/ds3.mp3').toDestination();
+const noteF3 = new Tone.Player('./sound/f3.mp3').toDestination();
+const noteFs3 = new Tone.Player('./sound/fs3.mp3').toDestination();
+const noteGs3 = new Tone.Player('./sound/gs3.mp3').toDestination();
+const noteA3 = new Tone.Player('./sound/a3.mp3').toDestination();
+const noteAs3 = new Tone.Player('./sound/as3.mp3').toDestination();
+const noteB3 = new Tone.Player('./sound/b3.mp3').toDestination();
+
+const keyCs2 = document.querySelector('.key-cs2');
+const keyD2 = document.querySelector('.key-d2');
+const keyDs2 = document.querySelector('.key-ds2');
+const keyE2 = document.querySelector('.key-e2');
+const keyF2 = document.querySelector('.key-f2');
+const keyFs2 = document.querySelector('.key-fs2');
+const keyG2 = document.querySelector('.key-g2');
+const keyGs2 = document.querySelector('.key-gs2');
+const keyA2 = document.querySelector('.key-a2');
+const keyAs2 = document.querySelector('.key-as2');
+const keyB2 = document.querySelector('.key-b2');
+
+const keyCs3 = document.querySelector('.key-cs3');
+const keyD3 = document.querySelector('.key-d3');
+const keyDs3 = document.querySelector('.key-ds3');
+const keyE3 = document.querySelector('.key-e3');
+const keyF3 = document.querySelector('.key-f3');
+const keyFs3 = document.querySelector('.key-fs3');
+const keyG3 = document.querySelector('.key-g3');
+const keyGs3 = document.querySelector('.key-gs3');
+const keyA3 = document.querySelector('.key-a3');
+const keyAs3 = document.querySelector('.key-as3');
+const keyB3 = document.querySelector('.key-b3');
 
 const pianoKeys = document.querySelector(".board");
 pianoKeys.addEventListener("click", playKeynote);
@@ -134,17 +162,17 @@ function playScale() {
     const fScale = scale.map(note => note.toLowerCase());
     if (scaleLabel.classList.contains("inactive")) {
         const fScale = scale.map(note => note.toLowerCase());
-        fScale.forEach(element => {
-            playNote(element)
-            keyGlow(element)
+        fScale.forEach(keyNote => {
+            playNote(keyNote)
+            keyGlow(keyNote)
         });
     } else {
         let i = 0;
-        fScale.forEach(element => {
+        fScale.forEach(keyNote => {
             ++i;
             setTimeout((i) => {
-                playNote(element)
-                keyGlow(element)
+                playNote(keyNote)
+                keyGlow(keyNote)
             }, 0 + (60 / 150) * (1000 * i));
         });
     }
@@ -153,6 +181,7 @@ function playScale() {
 function playKeynote(e) {
     if (e.target !== e.currentTarget) {
         const keyNote = e.target.className.substring(10);
+        // const that = e.target;
         if (keyNote.includes('s')) {
             e.target.style.backgroundColor = '#000'
         } else {
@@ -188,41 +217,78 @@ function keyGlow(keyNote) {
 function playNote(keyNote) {
     console.log(keyNote)
     switch (keyNote) {
-        case 'c':
+        case 'c2':
             noteC2.start();
             break;
-        case 'cs':
+        case 'cs2':
             noteCs2.start();
             break;
-        case 'd':
+        case 'd2':
             noteD2.start();
             break;
-        case 'ds':
+        case 'ds2':
             noteDs2.start();
             break;
-        case 'e':
+        case 'e2':
             noteE2.start();
             break;
-        case 'f':
+        case 'f2':
             noteF2.start();
             break;
-        case 'fs':
+        case 'fs2':
             noteFs2.start();
             break;
-        case 'g':
+        case 'g2':
             noteG2.start();
             break;
-        case 'gs':
+        case 'gs2':
             noteGs2.start();
             break;
-        case 'a':
+        case 'a2':
             noteA2.start();
             break;
-        case 'as':
+        case 'as2':
             noteAs2.start();
             break;
-        case 'b':
+        case 'b2':
             noteB2.start();
+            break;
+
+        case 'c3':
+            noteC3.start();
+            break;
+        case 'cs3':
+            noteCs3.start();
+            break;
+        case 'd3':
+            noteD3.start();
+            break;
+        case 'ds3':
+            noteDs3.start();
+            break;
+        case 'e3':
+            noteE3.start();
+            break;
+        case 'f3':
+            noteF3.start();
+            break;
+        case 'fs3':
+            noteFs3.start();
+            break;
+        case 'g3':
+            noteG3.start();
+            break;
+        case 'gs3':
+            noteGs3.start();
+            break;
+        case 'a3':
+            noteA3.start();
+            break;
+        case 'as3':
+            noteAs3.start();
+            break;
+        case 'b3':
+            noteB3.start();
             break;
     }
 }

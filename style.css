@@ -50,7 +50,7 @@ h1 {
 }
 
 .board {
-    width: 100vw;
+    width: 1400px;
     justify-content: center;
     margin: 10vh 0;
 }
@@ -59,7 +59,7 @@ form {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 40vw;
+    width: 780px;
 }
 
 section {
@@ -195,7 +195,11 @@ button:hover {
 @media (max-width: 1200px) {
     form {
         justify-content: space-between;
-        width: 55vw;
+        width: 700px;
+    }
+
+    .board {
+        scale: 0.7;
     }
 
     button {
@@ -204,18 +208,22 @@ button:hover {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     form {
-        width: 80vw;
+        width: 630px;
+    }
+
+    .board {
+        scale: 0.5;
     }
 }
 
 @media (max-width: 690px) {
     .board {
         transform: rotate(-90deg);
-        scale: 0.6;
+        scale: 0.5;
         width: 1000px;
-        margin: 6vh 0;
+        margin: 10vh 0;
     }
 
     form {
@@ -229,7 +237,7 @@ button:hover {
     .scale-section {
         width: 100%;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
     }
 
     label {
