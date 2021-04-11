@@ -200,6 +200,11 @@ button:hover {
 
     .board {
         scale: 0.7;
+        -webkit-transform: scale(0.7);
+        -moz-transform: scale(0.7);
+        -o-transform: scale(0.7);
+        transform: scale(0.7);
+
     }
 
     button {
@@ -215,15 +220,33 @@ button:hover {
 
     .board {
         scale: 0.5;
+        -webkit-transform: scale(0.5);
+        -moz-transform: scale(0.5);
+        -o-transform: scale(0.5);
+        transform: scale(0.5);
     }
 }
 
 @media (max-width: 690px) {
+    h1 {
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
+    }
     .board {
-        transform: rotate(-90deg);
         scale: 0.5;
+        -webkit-transform: scale(0.5);
+        -moz-transform: scale(0.5);
+        -o-transform: scale(0.5);
+        transform: scale(0.5);
         width: 1000px;
         margin: 10vh 0;
+
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg); /* WebKit */
+        -moz-transform: rotate(-90deg); /* Mozilla */
+        -o-transform: rotate(-90deg); /* Opera */
+        -ms-transform: rotate(-90deg); /* Internet Explorer */
+        transform: rotate(-90deg); /* CSS3 */
     }
 
     form {
@@ -250,6 +273,12 @@ button:hover {
 
     .note {
         transform: rotate(90deg);
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg); /* WebKit */
+        -moz-transform: rotate(90deg); /* Mozilla */
+        -o-transform: rotate(90deg); /* Opera */
+        -ms-transform: rotate(90deg); /* Internet Explorer */
+        transform: rotate(90deg); /* CSS3 */
     }
 
     button {
